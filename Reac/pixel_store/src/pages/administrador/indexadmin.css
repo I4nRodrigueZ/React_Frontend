@@ -1,0 +1,60 @@
+.indexadmin-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(to right, #2c3e50, #3498db);
+    color: white;
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .current-date {
+    font-size: 1.5rem;
+    margin-top: 10px;
+  }
+  
+  .crud-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .crud-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .crud-btn:hover {
+    background-color: #c0392b;
+    transform: translateY(-5px);
+  }
+  
+  .crud-btn:focus {
+    outline: none;
+  }
+  
+  .crud-btn:active {
+    transform: translateY(0);
+  }
+  

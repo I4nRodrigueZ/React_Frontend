@@ -1,0 +1,408 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+}
+
+:root {
+    --bg-color: #0c0c0c;
+    --text-color: #fff;
+    --main-color: #ae8957;
+    --big-font: 6.6rem;
+    --p-font: 1rem;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    padding: 5px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all .50s ease;
+}
+
+.logo img {
+    width: 100%;
+    height: auto;
+}
+
+.navlist {
+    display: flex;
+}
+
+.navlist a {
+    margin: 0 35px;
+    color: var(--text-color);
+    font-size: var(--p-font);
+    transition: all .6s ease;
+}
+
+.navlist a:hover {
+    color: var(--main-color);
+}
+
+.right-content {
+    display: flex;
+    align-items: center;
+}
+
+.nav-btn {
+    padding: 9px 24px;
+    background: transparent;
+    border: 2px solid var(--text-color);
+    border-radius: 7px;
+    color: var(--text-color);
+    font-size: 15px;
+    font-weight: 500;
+    transition: all .6s ease;
+}
+
+.nav-btn:hover {
+    transform: translateY(-5px);
+    border: 2px solid var(--main-color);
+    color: var(--main-color);
+}
+
+#menu-icon {
+    font-size: 42px;
+    z-index: 10001;
+    cursor: pointer;
+    margin-left: 25px;
+    display: none;
+}
+
+section {
+    padding: 0 14%;
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 2rem;
+}
+
+.hero-img img {
+    width: 100%;
+    height: auto;
+}
+
+.hero-text h1 {
+    font-size: var(--big-font);
+    font-weight: 900;
+    margin: 15px 0;
+}
+
+.hero-text h5 {
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.hero-text p {
+    max-width: 620px;
+    font-size: var(--p-font);
+    line-height: 32px;
+    margin-bottom: 40px;
+}
+
+.main-hero {
+    display: flex;
+    align-items: center;
+}
+
+.btn {
+    padding: 13px 32px;
+    background: var(--main-color);
+    border-radius: 7px;
+    color: var(--text-color);
+    font-size: 15px;
+    font-weight: 500;
+    transition: all .6s ease;
+    margin-left: 20px;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+.price {
+    display: flex;
+    align-items: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.price span {
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--main-color);
+    margin-left: 10px;
+}
+
+/* Estilos generales de los iconos */
+.icons {
+    position: absolute;
+    top: 50%;
+    left: 60px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.icon-img {
+    color: var(--text-color);
+    font-size: 40px;
+    transition: all .6s ease;
+}
+
+.icon-img:hover {
+    transform: scale(1.1);
+}
+
+.scroll {
+    position: absolute;
+    top: 92%;
+    right: 7%;
+    transform: translateY(-50%);
+}
+
+.scroll a {
+    font-size: 16px;
+    color: var(--text-color);
+}
+
+.scroll i {
+    font-size:  20px;
+    color: var(--text-color);
+    margin-right: 6px;
+}
+
+/* Media Queries para Responsividad */
+@media(max-width: 1770px) {
+    header {
+        padding: 22px 4%;
+    }
+    .icons {
+        padding: 0 4%;
+    }
+    .scroll {
+        right: 4%;
+    }
+}
+
+@media(max-width: 1670px) {
+    :root {
+        --big-font: 5.5rem;
+        --p-font: 15px;
+    }
+}
+
+@media(max-width: 1370px) {
+    .icons {
+        display: none;
+    }
+    section {
+        padding: 0 4%;
+    }
+}
+
+@media(max-width: 1150px) {
+    :root {
+        --big-font: 5.5rem;
+    }
+    .price {
+        font-size: 20px;
+    }
+    .btn {
+        padding: 10px 20px;
+    }
+}
+
+@media(max-width: 950px) {
+    #menu-icon {
+        display: block;
+    }
+    .navlist {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        padding: 100px 50px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 100%;
+        display: flex;
+        flex-direction: column;
+        backdrop-filter: blur(32px);
+        transition: all .6s ease-in-out;
+    }
+    .navlist a {
+        display: block;
+        margin: 0 0 25px 0;
+        font-size: 1.7rem;
+    }
+    .navlist.open {
+        left: 0;
+    }
+}
+
+@media(max-width: 920px) {
+    .scroll {
+        display: none;
+    }
+    .hero {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+    .hero-text {
+        padding-top: 130px;
+    }
+    .hero-img {
+        height: 500px;
+        width: 500px;
+        margin: 0 auto;
+    }
+    .hero-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
+
+@media(max-width: 570px) {
+    .hero {
+        height: 100vh;
+    }
+    .hero-img {
+        height: 400px;
+        width: 400px;
+        margin: 0 auto;
+    }
+    :root {
+        --big-font: 4rem;
+    }
+}
+
+@media(max-width: 440px) {
+    :root {
+        --big-font: 3.4rem;
+    }
+    .hero-text h5 {
+        font-size: 15px;
+    }
+    .hero-img {
+        height: 360px;
+        width: 360px;
+        margin: 0 auto;
+    }
+}
+
+/* Estilos del Carrusel */
+.carousel-container {
+    width: 100%;
+    max-width: 800px; /* Ajusta según sea necesario */
+    margin: 20px auto; /* Centra el carrusel */
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Estilo opcional */
+}
+
+/* Media Queries para el Carrusel */
+@media (max-width: 950px) {
+    .carousel-container {
+        margin: 10px; /* Reduce el margen en pantallas más pequeñas */
+        padding: 0; /* Elimina el padding si es necesario */
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-container {
+        padding: 0; /* Asegúrate de que no haya padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-container {
+        margin: 5px; /* Reduce el margen aún más */
+    }
+}
+
+
+.card {
+    width: 190px;
+    height: 254px;
+    background: rgb(103, 225, 255); /* Color de fondo azul */
+    transition: all 0.4s;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.705);
+    position: relative; /* Para el posicionamiento de los contenidos */
+    overflow: hidden; /* Oculta el contenido que se sale de la tarjeta */
+}
+  
+.card:hover {
+    cursor: pointer;
+    transform: scale(1.05); /* Un ligero aumento al pasar el mouse */
+}
+  
+  .first-content {
+    height: 100%;
+    width: 100%;
+    transition: all 0.4s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    border-radius: 15px;
+  }
+  
+  .card:hover .first-content {
+    height: 0px;
+    opacity: 0;
+  }
+  
+  .second-content {
+    height: 0%;
+    width: 100%;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    transition: all 0.4s;
+    font-size: 0px;
+    transform: rotate(90deg) scale(-1);
+  }
+  
+  .card:hover .second-content {
+    opacity: 1;
+    height: 100%;
+    font-size: 1.8rem;
+    transform: rotate(0deg);
+  }
+  .card-image {
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    height: 100%; /* Ocupa todo el alto del contenedor */
+    object-fit: cover; /* Ajusta la imagen sin distorsión */
+    border-radius: 10px; /* Coincide con las esquinas de la tarjeta */
+    transition: opacity 0.4s ease; /* Transición suave */
+}
